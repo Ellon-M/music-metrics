@@ -23,7 +23,7 @@ export const getPlaylists = createAsyncThunk(
   async (token) => {
     try {
       const res = await axios.get(
-        `${import.meta.env.VITE_ENDPOINT}/browse/featured-playlists`,
+        `${import.meta.env.VITE_ENDPOINT}/browse/featured-playlists?country=US&limit=20`,
         {
           headers: {
             'Authorization': `Bearer ${token}`
@@ -47,10 +47,10 @@ export const playlistsSlice = createSlice({
     extraReducers: (builder) => {
       builder
       .addCase(authenticate.fulfilled, (state, { payload }) => {
-        payload ? state.token = payload : "";
+        state.token = payload;
       })
       .addCase(getPlaylists.fulfilled, (state, { payload }) => {
-        payload ? state.playlists?.push(payload) : state.playlists?.push('');
+        payload ? state.playlists.push(payload): {};
       })
     }
 })
