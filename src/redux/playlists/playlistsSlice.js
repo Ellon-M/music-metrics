@@ -38,8 +38,29 @@ export const getPlaylists = createAsyncThunk(
   }
 )
 
+export const getPlaylistItems = createAsyncThunk(
+  'charts/getPlaylistItems',
+  async (id) => {
+    try {
+      const res = await axios.get(
+        `${import.meta.env.VITE_ENDPOINT}/playlists/${id}/tracks?limit=20`,
+        {
+          headers: {
+            'Authorization': `Bearer ${token}`
+          },
+        }
+      )
+
+      return res.data;
+    }
+    catch(err) {
+      return err.message;
+    }
+  }
+)
+
 export const playlistsSlice = createSlice({
-    name: 'charts',
+    name: 'playlists',
     initialState: {
       token: "",
       playlists: []

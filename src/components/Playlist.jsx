@@ -1,8 +1,11 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+
 
 const Playlist = ({
   id, name, image, tracks
 }) => {
+
   return (
     <>
       <ul>
@@ -12,6 +15,7 @@ const Playlist = ({
           <p>{tracks}</p>
         </li>
       </ul>
+      <Link to="/details" state={id}>See Tracks</Link>
     </>
   );
 }

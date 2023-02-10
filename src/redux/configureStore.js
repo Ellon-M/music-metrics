@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import playlistsReducer from './playlists/playlistsSlice';
+import detailsReducer from './playlists/detailsSlice';
 
 const store = configureStore({
   reducer: {
-    playlists: playlistsReducer
+    playlists: playlistsReducer,
+    details: detailsReducer
   }
 })
 

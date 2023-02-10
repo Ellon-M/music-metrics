@@ -10,6 +10,8 @@ const Playlists = () => {
   const accessToken = useSelector((state) => state.playlists?.token);
   const playlistData = useSelector((state) => state?.playlists.playlists[0]?.playlists);
 
+  localStorage.setItem('access-token', JSON.stringify(accessToken));
+
   useEffect(() => {
     dispatch(authenticate());
   }, []);
@@ -22,6 +24,8 @@ const Playlists = () => {
 
   const playlists = filterPlaylists(playlistData);
 
+  console.log(playlists);
+
   return (
     <div>
       {playlists?.map((playlist) => (
@@ -32,4 +36,3 @@ const Playlists = () => {
 }
   
 export default Playlists;
-
