@@ -6,17 +6,27 @@ const Playlist = ({
   id, name, image, tracks
 }) => {
 
+  const details = {id, name, tracks};
+
+  const imageStyle = {
+    backgroundImage: `linear-gradient(
+      rgba(244, 76, 130, 0.85), 
+      rgba(244, 76, 130, 0.65)
+    ),url(${image})`,
+  }
+
   return (
-    <>
-      <ul>
-        <li key={id}>
-          <img src={image} />
-          <h4>{name}</h4>
-          <p>{tracks}</p>
-        </li>
-      </ul>
-      <Link to="/details" state={id}>See Tracks</Link>
-    </>
+    <li key={id} className="playlist">
+      <div className="playlist-body" style={imageStyle}>
+        <Link to="/details" state={details} className="playlist-link">
+        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" id="enterIcon" height="1.5em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"></path></svg>
+        </Link>
+        <div className="playlist-bottom">
+          <h4 className="playlist-name">{name}</h4>
+          <p className="playlist-track-count">{tracks}</p>
+        </div>
+      </div>
+    </li>
   );
 }
 export default Playlist;

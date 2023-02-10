@@ -27,11 +27,11 @@ const Playlists = () => {
   console.log(playlists);
 
   return (
-    <div>
+    <ul className="playlists">
       {playlists?.map((playlist) => (
         <Playlist id={playlist.id} name={playlist.name} image={playlist.image} tracks={playlist.tracks} />
       ))}
-    </div>
+    </ul>
   )
 }
   

@@ -3,10 +3,9 @@ import Playlists from '../components/Playlists'
 
 const Home = () => {
   return (
-    <div>
-      <h1>HomePage</h1>
+    <section className="home">
       <Playlists />
-    </div>
+    </section>
   )
 }
 

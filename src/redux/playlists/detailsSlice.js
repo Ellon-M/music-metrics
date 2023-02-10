@@ -9,7 +9,7 @@ export const getPlaylistItems = createAsyncThunk(
     async (values) => {
       try {
         const res = await axios.get(
-          `${import.meta.env.VITE_ENDPOINT}/playlists/${values.playlistId}/tracks?limit=20`,
+          `${import.meta.env.VITE_ENDPOINT}/playlists/${values.playlistId}/tracks`,
           {
             headers: {
               'Authorization': `Bearer ${values.token}`
@@ -33,7 +33,7 @@ export const detailsSlice = createSlice({
   extraReducers: (builder) => {
     builder
     .addCase(getPlaylistItems.fulfilled, (state, { payload }) => {
-      payload ? state.details.push(payload) : {}
+      state.details.length > 0 ? state.details.splice(0, 1, payload) : state.details.push(payload);
     })
   }
 })
