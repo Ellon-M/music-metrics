@@ -9,7 +9,7 @@ import store from './redux/configureStore';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={store}>
-    <Router> 
+    <Router basename="http://ellon-m.github.io/music-metrics"> 
       <App />
     </Router>
   </Provider>
