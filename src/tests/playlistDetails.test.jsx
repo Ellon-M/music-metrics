@@ -2,9 +2,8 @@ import { render } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
-import renderer from 'react-test-renderer';
-import store from '../redux/configureStore.js';
-import PlaylistInfo from '../components/PlaylistInfo.jsx';
+import store from '../redux/configureStore';
+import PlaylistInfo from '../components/PlaylistInfo';
 
 describe('Playlists', () => {
   it('render onload', () => {
@@ -13,9 +12,9 @@ describe('Playlists', () => {
         <Router>
           <PlaylistInfo />
         </Router>
-      </Provider>
-    )
+      </Provider>,
+    );
 
     expect(tree).toMatchSnapshot();
-  })
-})
+  });
+});

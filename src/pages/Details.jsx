@@ -1,13 +1,11 @@
-import PlaylistInfo from "../components/PlaylistInfo";
+import PlaylistInfo from '../components/PlaylistInfo';
 
-const Details = () => {
+function Details() {
   return (
-    <>
-      <section className="details">
-        <PlaylistInfo />
-      </section>
-    </>
-  )
+    <section className="details">
+      <PlaylistInfo />
+    </section>
+  );
 }
 
-export default Details
+export default Details;

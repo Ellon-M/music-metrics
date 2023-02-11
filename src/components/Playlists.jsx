@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getPlaylists, authenticate } from '../redux/playlists/playlistsSlice.js';
-import { filterPlaylists } from '../utils/filter.js';
-import Playlist from './Playlist.jsx';
+import { getPlaylists, authenticate } from '../redux/playlists/playlistsSlice';
+import { filterPlaylists } from '../utils/filter';
+import Playlist from './Playlist';
 
-const Playlists = () => {
+function Playlists() {
   const dispatch = useDispatch();
 
   const accessToken = useSelector((state) => state.playlists?.token);
@@ -14,23 +14,29 @@ const Playlists = () => {
 
   useEffect(() => {
     dispatch(authenticate());
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     if (accessToken) {
-    dispatch(getPlaylists(accessToken));
+      dispatch(getPlaylists(accessToken));
     }
-  }, [accessToken]);
+  }, [dispatch, accessToken]);
 
   const playlists = filterPlaylists(playlistData);
 
   return (
     <ul className="playlists">
       {playlists?.map((playlist) => (
-        <Playlist key={playlist.id} id={playlist.id} name={playlist.name} image={playlist.image} tracks={playlist.tracks} />
+        <Playlist
+          key={playlist.id}
+          id={playlist.id}
+          name={playlist.name}
+          image={playlist.image}
+          tracks={playlist.tracks}
+        />
       ))}
     </ul>
-  )
+  );
 }
-  
+
 export default Playlists;

@@ -6,11 +6,10 @@ import App from './App';
 import './index.css';
 import store from './redux/configureStore';
 
-
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={store}>
-    <Router basename="http://ellon-m.github.io/music-metrics"> 
+    <Router>
       <App />
     </Router>
-  </Provider>
-)
+  </Provider>,
+);
