@@ -44,7 +44,7 @@ const PlaylistInfo = () => {
             </div>
             <div className="track-popularity-play">
               <h5 className="track-popularity">{track.popularity}</h5>   
-              <img className="track-play-btn" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAACj0lEQVR4nMWWy08TURTGa3ybGkFeC41AjRvE+GcYnzGiblyamLgwunLtyqBGBBe1kNBqOlXBxI3AxkSpVEEKbanG1opokAK2jVpbnbYZ/cyZQAed9t6ZYdQvOc10Mvf+MnPP+c6xWO0W/I+waH2wpms9jg0cRHvwCnpiHvjiXjnomu4d7T+A6s515oF3Co3wRG/hWyELnugZIXpTXmMYXNW5FtdDV5H/kYde5aSc/BU2O9boA9c7qzEUH8RyNTL3FDZXnTawzVWH9+kpmKV36bdodNWywZWO1aa86Z8anvPJR1cWTGf6t9QevFwa3CzYmIn0ITONl6mwYXBOyqHJ3aAGU8mwNDo/jE03VuKc9zRSYtIQXIi4fgeTOfDq1D8/Uly0pbsCbYFW+S30KFvIFE1GBh8fOMRdNPbxuSozd3t24P5kry54S/9+BUzFzgePljWDww/2IPrpla4ks9DPvTd3uAvGE36mBVY4VuHM4CkkvyeY+/TEPApYS+3ywIuxtbtSPv9yFfIk/lgB0x+eAokxTeBtzirYwx2Qfkol9/HOPFLAvbHbXHAwMc4Ekuud951FOv+Fuc/dmKAvuULJADO5Xn+OQIuuBS4pYGriPE0kgyrgLmG77nI60rdXAZOBZwpfmQvCqVARWNu1ARf9FyBK4vIMxGq3yJMDSy9SE9hoX4GTD08gnp2BEbkjTrVX07jCssDZbFxub0YlSiKa3PWl26KWJDOqtkDrvx8Ens0OqeYv1ehDYwqNK2ZpKj2JBleNtmGP3EeLm/FEOaF52LMuBH0a6iR6e+5iItGZ6h5vrUuCMpEmB6pBnsgLqGSWZq9hsHUhqPCpidNXIL+lJKSga7rX0rdPNUmaAjY7fgHuHICUjUc0kgAAAABJRU5ErkJggg=="/>
+              <svg className="track-play-btn" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" id="enterIcon" height="1.5em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"></path></svg>
             </div>
 
           </li>
