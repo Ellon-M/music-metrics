@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getPlaylists, authenticate } from '../redux/playlists/playlistsSlice';
-import { filterPlaylists } from '../utils/filter';
-import Playlist from './Playlist';
+import { getPlaylists, authenticate } from '../redux/playlists/playlistsSlice.js';
+import { filterPlaylists } from '../utils/filter.js';
+import Playlist from './Playlist.jsx';
 
 const Playlists = () => {
   const dispatch = useDispatch();
@@ -24,12 +24,10 @@ const Playlists = () => {
 
   const playlists = filterPlaylists(playlistData);
 
-  console.log(playlists);
-
   return (
     <ul className="playlists">
       {playlists?.map((playlist) => (
-        <Playlist id={playlist.id} name={playlist.name} image={playlist.image} tracks={playlist.tracks} />
+        <Playlist key={playlist.id} id={playlist.id} name={playlist.name} image={playlist.image} tracks={playlist.tracks} />
       ))}
     </ul>
   )

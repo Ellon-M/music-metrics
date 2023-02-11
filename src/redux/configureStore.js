@@ -5,8 +5,8 @@ import detailsReducer from './playlists/detailsSlice';
 const store = configureStore({
   reducer: {
     playlists: playlistsReducer,
-    details: detailsReducer
-  }
-})
+    details: detailsReducer,
+  },
+});
 
 export default store;
