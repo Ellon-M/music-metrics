@@ -21,13 +21,13 @@ export const filterTracks = (data) => {
     let artistNames = [];
     item?.track?.artists?.forEach((artist) => { artistNames.push(artist.name);})
     const trackInfo = {
-      id: item.track.id,
-      name: item.track.name,
+      id: item?.track?.id ? item?.track?.id : '',
+      name: item.track?.name ? item.track.name : '',
       artists: artistNames,
       image: item?.track?.album?.images[0]?.url,
-      popularity: item.track.popularity
+      popularity: item.track?.popularity ? item.track?.popularity : ''
     }
-    if (item.track.popularity > 15) {
+    if (item.track?.popularity > 15) {
       tracks.push(trackInfo);
     }
   })

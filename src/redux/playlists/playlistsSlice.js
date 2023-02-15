@@ -63,6 +63,7 @@ export const playlistsSlice = createSlice({
     name: 'playlists',
     initialState: {
       token: "",
+      loading: false,
       playlists: []
     },
     extraReducers: (builder) => {
@@ -70,8 +71,12 @@ export const playlistsSlice = createSlice({
       .addCase(authenticate.fulfilled, (state, { payload }) => {
         state.token = payload;
       })
+      .addCase(getPlaylists.pending, (state, { payload }) => {
+        state.loading = true;
+      })
       .addCase(getPlaylists.fulfilled, (state, { payload }) => {
-        payload ? state.playlists.push(payload): {};
+        state.loading = false;
+        state.playlists.push(payload);
       })
     }
 })
